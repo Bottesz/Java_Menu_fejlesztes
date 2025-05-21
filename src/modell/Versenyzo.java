@@ -46,18 +46,29 @@ public class Versenyzo {
         return "Versenyzo{" + "nev=" + nev + ", email=" + email + ", atlag=" + atlag + ", elsoDb=" + elsoDb + '}';
     }
     
+    /**
+     * Levágja a többi tizedeseket
+     * @param pontossag tizedesek száma
+     * @return diuble , de nem kerekitett hanem levágott 
+     */
+    
     public double TizedestLevag(int pontossag){
     int sz = (int)Math.pow(10,pontossag);
     return (int)(atlag*sz)/(double)sz ;
     }
     
+    
+    /**
+     * Levágja a pontossag utáni tizedeseket,
+     * @param pontossag tizedesek száma
+     * @return diuble , de nem kerekitett hanem levágott 
+     */
+    
     public double Kerekit(int pontossag){
     BigDecimal kerekitett = new BigDecimal(atlag);
      return kerekitett.setScale(pontossag,RoundingMode.HALF_UP).doubleValue();
     }
-    /**
-     *  Levágja a többi tizedest
-     */
+   
     
     
 //    public double getAtlagJóTizedessel(int pontossag){
