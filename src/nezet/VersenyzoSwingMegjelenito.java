@@ -147,7 +147,7 @@ public class VersenyzoSwingMegjelenito extends javax.swing.JFrame {
         try {
             String sor = Files.readString(Path.of("versenyzok.txt"));
             Versenyzo versenyzo = new Versenyzo(sor);
-            Atlag_Kettizedes(versenyzo);
+            megjelenit(versenyzo);
             
         } catch (IOException ex) {
             Logger.getLogger(VersenyzoSwingMegjelenito.class.getName()).log(Level.SEVERE, null, ex);
@@ -170,13 +170,17 @@ public class VersenyzoSwingMegjelenito extends javax.swing.JFrame {
         return formazo.formatted(atlag);
     }
     
-    private String Atlag_Kettizedes(double atlag) {
-        return Atlag_Kettizedes(atlag);
-    }
+//    private String Atlag_Kettizedes(double atlag) {
+//        return Atlag_Kettizedes(atlag);
+//    }
+    
     private void mnuPrgFixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuPrgFixActionPerformed
-//        Double eredmeny = String.format("%.2f",Atlag_Kettizedes(versenyzo));
+
         Versenyzo versenyzo = new Versenyzo("RókaRudi", "rr@r.hu", Math.E, 21);
-        Atlag_Kettizedes(versenyzo);
+        megjelenit(versenyzo);
+        
+        System.out.println("" + versenyzo.TizedestLevag(2));
+        System.out.println("" + versenyzo.Kerekit(2));
         
     }//GEN-LAST:event_mnuPrgFixActionPerformed
 

@@ -1,5 +1,8 @@
 package modell;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Versenyzo {
     private String nev;
     private String email;
@@ -31,6 +34,7 @@ public class Versenyzo {
 
     public double getAtlag() {
         return atlag;
+        
     }
 
     public int getElsoDb() {
@@ -41,6 +45,25 @@ public class Versenyzo {
     public String toString() {
         return "Versenyzo{" + "nev=" + nev + ", email=" + email + ", atlag=" + atlag + ", elsoDb=" + elsoDb + '}';
     }
+    
+    public double TizedestLevag(int pontossag){
+    int sz = (int)Math.pow(10,pontossag);
+    return (int)(atlag*sz)/(double)sz ;
+    }
+    
+    public double Kerekit(int pontossag){
+    BigDecimal kerekitett = new BigDecimal(atlag);
+     return kerekitett.setScale(pontossag,RoundingMode.HALF_UP).doubleValue();
+    }
+    /**
+     *  Levágja a többi tizedest
+     */
+    
+    
+//    public double getAtlagJóTizedessel(int pontossag){
+//        
+//    }
+    
     
     
 }
